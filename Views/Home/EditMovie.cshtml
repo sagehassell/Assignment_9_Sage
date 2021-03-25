@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Update Movie Info";
+}
+@model Movie
+
+<form asp-action="EditMovie" method="post">
+
+    <input type="hidden" asp-for="MovieId" />
+    
+    <label asp-for="Category">Category:</label>
+    <br />
+    <input placeholder="@Model.Category" asp-for="Category" />
+    <br /><br />
+
+    <label asp-for="Title">Title:</label>
+    <br />
+    <input placeholder="@Model.Title" asp-for="Title" />
+    <br /><br />
+
+    <label asp-for="Year">Year:</label>
+    <br />
+    <input placeholder="@Model.Year" asp-for="Year" />
+    <br /><br />
+
+    <label asp-for="Director">Director:</label>
+    <br />
+    <input placeholder="@Model.Director" asp-for="Director" />
+    <br /><br />
+
+    <label asp-for="Rating">Rating:</label>
+    <br />
+    <select>
+        <option >Select One</option>
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+    </select>
+    <br /><br />
+
+    <label asp-for="Edited">Edited:</label>
+    <br />
+    <select>
+        <option>Select One</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <br /><br />
+
+    <label asp-for="Lent">Lent to:</label>
+    <br />
+    <input placeholder="@Model.Lent" asp-for="Lent" />
+    <br /><br />
+
+    <label asp-for="Notes">Notes:</label>
+    <br />
+    <input placeholder="@Model.Notes"  maxlength="25" asp-for="Notes" />
+    <br /><br /><br />
+
+    <div asp-validation-summary="All"></div>
+
+    <button type="submit">Update Movie</button>
+
+</form>
